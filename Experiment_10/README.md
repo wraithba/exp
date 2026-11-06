@@ -80,3 +80,14 @@ After the platform and any Firebase setup, run `flutter pub get`, `flutter analy
 ## Short code for writing on paper
 
 Read `abc.txt` for the minimal study example. Firebase Authentication registration/login/logout with a Firestore name/email profile. Confirmation, role and timestamps are omitted. The description above explains the fuller application in `lib/main.dart`; do not describe omitted features as part of the short sample. The short samples have been reviewed but have not been compiled or run.
+
+
+## HTML version
+
+Open `index.html` for the browser version of `lib/main.dart`. It recreates the controls, data and interactions with HTML, CSS and JavaScript; appearance may differ slightly from Flutter.
+
+From the repository root, run `python -m http.server 8000` (Windows: `py -m http.server 8000`), then visit `http://localhost:8000/Experiment_10/`.
+
+Paste your Firebase web configuration as JSON into the setup panel and click **Connect Firebase**. Use the same Firebase project as your Dart app to share data. Firestore must be enabled and its rules must permit the requested operations. Internet access is required to load the Firebase SDK and contact Firebase. Configuration is saved in this browser; reload before changing projects.
+
+Enable Email/Password in Firebase Authentication and add your hosted domain to Authentication authorized domains. Roles here are profile labels; they do not grant database permissions.

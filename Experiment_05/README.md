@@ -92,3 +92,10 @@ Five widget tests cover both courses, returned feedback, whitespace input, cance
 ## Short code for writing on paper
 
 Read `abc.txt` for the minimal study example. Named routes, passing course names and returning a comment. Course descriptions, name and rating are omitted. The description above explains the fuller application in `lib/main.dart`; do not describe omitted features as part of the short sample. The short samples have been reviewed but have not been compiled or run.
+
+
+## HTML version
+
+Open `index.html` for the browser version of `lib/main.dart`. It recreates the controls, data and interactions with HTML, CSS and JavaScript; appearance may differ slightly from Flutter.
+
+From the repository root, run `python -m http.server 8000` (Windows: `py -m http.server 8000`), then visit `http://localhost:8000/Experiment_05/`.
