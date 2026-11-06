@@ -78,7 +78,11 @@ Thus, Experiment 3, Product Search and Filter, was implemented and its output wa
 Includes search, category, maximum price, stock, sorting and reset. A minimum-price slider and rating sort are omitted.
 
 ## Verification status
-Source reviewed and Dart syntax parsed successfully. Dependency YAML and matching abc.txt copies were checked. These are syntax and package-content checks, not Flutter analysis or execution: compilation, dependency resolution, widget tests and device/cloud behaviour remain unverified because the Flutter SDK is unavailable here.
+Source reviewed and Dart syntax parsed successfully. Dependency YAML and full application sources were checked; abc.txt is now a separate short sample. These are syntax and package-content checks, not Flutter analysis or execution: compilation, dependency resolution, widget tests and device/cloud behaviour remain unverified because the Flutter SDK is unavailable here.
 
 ## Local verification
 After the platform and any Firebase setup, run `flutter pub get`, `flutter analyze lib/main.dart`, and the run command for your target above. Check normal, empty and invalid inputs against Expected output and checks.
+
+## Short code for writing on paper
+
+Read `abc.txt` for the minimal study example. Case-insensitive name search and maximum-price filter. Category, stock, sorting and reset are omitted. The description above explains the fuller application in `lib/main.dart`; do not describe omitted features as part of the short sample. The short samples have been reviewed but have not been compiled or run.

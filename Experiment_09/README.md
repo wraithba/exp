@@ -67,7 +67,7 @@ Thus, Experiment 9, Firestore Task Updates, was implemented and its output was o
 Includes title/assignee edits, progress/status updates, status filtering and deletion. Due dates and priorities are omitted. Edit is a multi-field update, not replacement of the entire document.
 
 ## Verification status
-Source reviewed and Dart syntax parsed successfully. Dependency YAML and matching abc.txt copies were checked. These are syntax and package-content checks, not Flutter analysis or execution: compilation, dependency resolution, widget tests and device/cloud behaviour remain unverified because the Flutter SDK is unavailable here.
+Source reviewed and Dart syntax parsed successfully. Dependency YAML and full application sources were checked; abc.txt is now a separate short sample. These are syntax and package-content checks, not Flutter analysis or execution: compilation, dependency resolution, widget tests and device/cloud behaviour remain unverified because the Flutter SDK is unavailable here.
 
 ## Reference
 https://firebase.google.com/docs/flutter/setup
@@ -75,3 +75,7 @@ https://firebase.google.com/docs/firestore/query-data/queries
 
 ## Local verification
 After the platform and any Firebase setup, run `flutter pub get`, `flutter analyze lib/main.dart`, and the run command for your target above. Check normal, empty and invalid inputs against Expected output and checks.
+
+## Short code for writing on paper
+
+Read `abc.txt` for the minimal study example. Firestore task creation and partial completion update. Only title and done state are used; progress slider and editing are omitted. The description above explains the fuller application in `lib/main.dart`; do not describe omitted features as part of the short sample. The short samples have been reviewed but have not been compiled or run.

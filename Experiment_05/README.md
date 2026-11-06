@@ -78,7 +78,7 @@ Thus, Experiment 5, Named Routes and Feedback, was implemented and its output wa
 Includes course information and returned name/rating/comment. About screen and custom unknown-route screen are omitted.
 
 ## Verification status
-Source reviewed and Dart syntax parsed successfully. Dependency YAML and matching abc.txt copies were checked. These are syntax and package-content checks, not Flutter analysis or execution: compilation, dependency resolution, widget tests and device/cloud behaviour remain unverified because the Flutter SDK is unavailable here.
+Source reviewed and Dart syntax parsed successfully. Dependency YAML and full application sources were checked; abc.txt is now a separate short sample. These are syntax and package-content checks, not Flutter analysis or execution: compilation, dependency resolution, widget tests and device/cloud behaviour remain unverified because the Flutter SDK is unavailable here.
 
 ## Verification commands
 After Flutter is installed, run from Experiment_05:
@@ -88,3 +88,7 @@ flutter analyze lib/main.dart test/exp05_test.dart
 flutter test test/exp05_test.dart
 ```
 Five widget tests cover both courses, returned feedback, whitespace input, cancellation and missing route arguments. They are supplied but have NOT been executed here. The feedback form scrolls when the available height is small. Confirm visually after launch as well.
+
+## Short code for writing on paper
+
+Read `abc.txt` for the minimal study example. Named routes, passing course names and returning a comment. Course descriptions, name and rating are omitted. The description above explains the fuller application in `lib/main.dart`; do not describe omitted features as part of the short sample. The short samples have been reviewed but have not been compiled or run.

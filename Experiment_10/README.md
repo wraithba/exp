@@ -68,7 +68,7 @@ Thus, Experiment 10, User Registration and Login, was implemented and its output
 Uses Firebase Authentication instead of the original manual SHA-256 comparison. Self-selected roles are display labels only. No production access-control system is implemented.
 
 ## Verification status
-Source reviewed and Dart syntax parsed successfully. Dependency YAML and matching abc.txt copies were checked. These are syntax and package-content checks, not Flutter analysis or execution: compilation, dependency resolution, widget tests and device/cloud behaviour remain unverified because the Flutter SDK is unavailable here.
+Source reviewed and Dart syntax parsed successfully. Dependency YAML and full application sources were checked; abc.txt is now a separate short sample. These are syntax and package-content checks, not Flutter analysis or execution: compilation, dependency resolution, widget tests and device/cloud behaviour remain unverified because the Flutter SDK is unavailable here.
 
 ## Reference
 https://firebase.google.com/docs/flutter/setup
@@ -76,3 +76,7 @@ https://firebase.google.com/docs/firestore/query-data/queries
 
 ## Local verification
 After the platform and any Firebase setup, run `flutter pub get`, `flutter analyze lib/main.dart`, and the run command for your target above. Check normal, empty and invalid inputs against Expected output and checks.
+
+## Short code for writing on paper
+
+Read `abc.txt` for the minimal study example. Firebase Authentication registration/login/logout with a Firestore name/email profile. Confirmation, role and timestamps are omitted. The description above explains the fuller application in `lib/main.dart`; do not describe omitted features as part of the short sample. The short samples have been reviewed but have not been compiled or run.

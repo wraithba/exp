@@ -1,51 +1,46 @@
+// SHORT PAPER SAMPLE - Experiment 4
+// Mileage, cost and input checks. History and unit switching are omitted.
+// This is a separate study example, not the complete lib/main.dart.
+// Use the fuller program if your exam question asks for its extra features.
+
 import 'package:flutter/material.dart';
 
-void main() { runApp(MaterialApp(home: Lab())); }
-class Lab extends StatefulWidget {
+void main() => runApp(MaterialApp(home: Mileage()));
+
+class Mileage extends StatefulWidget {
   @override
-  State<Lab> createState() => _LabState();
+  State<Mileage> createState() => _MileageState();
 }
-class _LabState extends State<Lab> {
-  final inputs = List.generate(4, (_) => TextEditingController());
-  final labels = ['Initial km', 'Final km', 'Fuel litres', 'Price per litre'];
-  String result = '';
-  final history = <String>[];
+class _MileageState extends State<Mileage> {
+  String start = '', end = '', fuel = '', price = '', result = '';
   void calculate() {
-    final values = inputs.map((c) => double.tryParse(c.text.trim())).toList();
-    if (values.any((v) => v == null || !v.isFinite)) {
-      setState(() => result = 'Enter valid numbers');
-      return;
-    }
-    final a = values[0]!, b = values[1]!, fuel = values[2]!, price = values[3]!;
+    final a = double.tryParse(start), b = double.tryParse(end);
+    final f = double.tryParse(fuel), p = double.tryParse(price);
     setState(() {
-      if (a < 0 || b <= a || fuel <= 0 || price < 0) {
-        result = 'Check readings, fuel and price';
+      if (a == null || b == null || f == null || p == null ||
+          !a.isFinite || !b.isFinite || !f.isFinite || !p.isFinite ||
+          a < 0 || b <= a || f <= 0 || p < 0) {
+        result = 'Enter valid values';
       } else {
-        result = 'Mileage: ${((b-a)/fuel).toStringAsFixed(2)} km/l\n'
-            'Cost: Rs. ${(fuel*price).toStringAsFixed(2)}';
-        history.insert(0, result);
+        result = 'Mileage: ${((b-a)/f).toStringAsFixed(2)} km/l\n'
+            'Cost: Rs. ${(f*p).toStringAsFixed(2)}';
       }
     });
   }
   @override
-  void dispose() {
-    for (final c in inputs) { c.dispose(); }
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Mileage Calculator')),
-      body: SingleChildScrollView(padding: const EdgeInsets.all(16),
-        child: Column(children: [
-          for (int i = 0; i < 4; i++)
-            TextField(controller: inputs[i],
-              keyboardType: const TextInputType.numberWithOptions(decimal: true),
-              decoration: InputDecoration(labelText: labels[i])),
-          ElevatedButton(onPressed: calculate, child: const Text('Calculate')),
-          Text(result),
-        ])),
-    );
-  }
+  Widget build(BuildContext context) => Scaffold(
+    appBar: AppBar(title: const Text('Mileage Calculator')),
+    body: SingleChildScrollView(child: Column(children: [
+      TextField(decoration: const InputDecoration(labelText: 'Initial km'),
+        onChanged: (v) => start = v),
+      TextField(decoration: const InputDecoration(labelText: 'Final km'),
+        onChanged: (v) => end = v),
+      TextField(decoration: const InputDecoration(labelText: 'Fuel litres'),
+        onChanged: (v) => fuel = v),
+      TextField(decoration: const InputDecoration(labelText: 'Price per litre'),
+        onChanged: (v) => price = v),
+      ElevatedButton(onPressed: calculate, child: const Text('Calculate')),
+      Text(result),
+    ])),
+  );
 }
